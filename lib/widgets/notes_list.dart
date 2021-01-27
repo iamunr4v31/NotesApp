@@ -10,14 +10,13 @@ class NotesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return notes.isEmpty
         ? Container(
+            width: double.infinity,
             alignment: Alignment.center,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text(
                   'No notes here yet. Add Notes',
-                  textAlign: TextAlign.center,
                 )
               ],
             ),
@@ -32,7 +31,7 @@ class NotesList extends StatelessWidget {
                     notes[index].title,
                     style: Theme.of(context).textTheme.headline6,
                   ),
-                  trailing: MediaQuery.of(context).size.width > 360
+                  trailing: MediaQuery.of(context).size.width > 420
                       ? FlatButton.icon(
                           textColor: Theme.of(context).errorColor,
                           icon: Icon(Icons.delete),
